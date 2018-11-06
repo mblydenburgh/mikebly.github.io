@@ -2,6 +2,10 @@
   font-family: 'Titillium Web', sans-serif;
 }
 
+.hide{
+  display: none;
+}
+
 #navbar{
   background: #57bc90;
   margin: 0;
@@ -37,6 +41,11 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+#welcome-section h6{
+  display: flex;
   justify-content: center;
 }
 
