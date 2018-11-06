@@ -71,6 +71,7 @@
   margin: 15px auto;
   background-color: white;
   border-radius: 15px;
+  box-shadow: 15px 10px 10px rgba(207, 207, 207, 0.5);
 }
 
 .project-tile img{
