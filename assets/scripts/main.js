@@ -9,6 +9,12 @@ let projects = [
         url:"https://mikebly.github.io/pupperbase",
         imgUrl:"../assets/images/pupper.jpg"
     },
+    {
+        title:"Rock Paper Scissors (Cross Browser w/ Firebase)",
+        url:"https://mikebly.github.io/RPS-MP",
+        imgUrl:"../assets/images/rps.jpg"
+    },
+
     
 ]
 
