@@ -9,6 +9,7 @@
 #navbar{
   background: #57bc90;
   margin: 0;
+  box-shadow: 0 3px 2px #57bc90;
 }
 
 #navbar ul{
@@ -19,7 +20,7 @@
 }
 
 #navbar ul li{
-  padding: 10px 25px 0px 25px;
+  padding: 10px 25px 10px 25px;
 }
 
 #navbar a{
