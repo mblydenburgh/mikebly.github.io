@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const hobbiesShow = document.querySelector(`#hobbies-show`);
     const skillsHide = document.querySelector(`#skills-hide`);
     const hobbiesHide = document.querySelector(`#hobbies-hide`);
-    const projectsDiv = document.querySelector(`#projects`);
+    const projectsDiv = document.querySelector(`#projects-container`);
     let hobbyText = document.querySelector(`#hobby-text`);
     let skillsText = document.querySelector(`#skills-span`);
 
@@ -93,13 +93,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function makeCard(project) {
         let newProject = document.createElement('a');
+        newProject.classList.add('project-tile')
         newProject.innerHTML(
             `
             <img src="./assets/images/munchie.jpg" alt="Munchies Metropolis">
             <p class="project-title">Munchies Metropolis</p>
             `
-        )
-
+        );
+        projectsDiv.appendChild(newProject);
     }
+
+    projects.map(project=>{return makeCard(project)})
 
 });
