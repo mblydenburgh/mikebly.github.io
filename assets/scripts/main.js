@@ -17,7 +17,7 @@ let projects = [
     {
         title: "Trivia",
         url: "https://mikebly.github.io/trivia",
-        imgUrl: "assets/images/trivia.jpg"
+        imgUrl: "./assets/images/trivia.jpg"
     },
     {
         title: "Giphy Goodness",
@@ -27,7 +27,7 @@ let projects = [
     {
         title: "TSA Luggage Analysis (Angular JS)",
         url: "https://mikebly.github.io/tsa-luggage-analysis",
-        imgUrl: "assets/images/claims.jpg"
+        imgUrl: "./assets/images/claims.jpg"
     },
     {
         title: "Star Wars Battle",
@@ -64,8 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const skillsHide = document.querySelector(`#skills-hide`);
     const hobbiesHide = document.querySelector(`#hobbies-hide`);
     const projectsDiv = document.querySelector(`#projects`);
+    const carouselIndicators = document.querySelector(`.carousel-indicators`);
+    const carouselDiv = document.querySelector(`.carousel-inner`);
     let hobbyText = document.querySelector(`#hobby-text`);
     let skillsText = document.querySelector(`#skills-span`);
+
 
 
 
@@ -94,17 +97,51 @@ document.addEventListener("DOMContentLoaded", function () {
     function makeCard(project) {
         let newProject = document.createElement('a');
         newProject.classList.add('project-tile');
-        newProject.setAttribute("href",project.url);
+        newProject.setAttribute("href", project.url);
         newProject.innerHTML =
             `
             <img src="${project.imgUrl}" alt="${project.title}">
             <p class="project-title">${project.title}</p>
             <a href="">See the code!</>
             `
-        ;
+            ;
         projectsDiv.appendChild(newProject);
     }
 
-    projects.map(project=>{return makeCard(project)})
+    function fillCarousel(project, i) {
+        let newIndicator;
+        let newCarouselItem;
+        //for each project, make an li & push into the ol
+        //make the first one have an "active" attribute
+        newIndicator = document.createElement('li');
+        newIndicator.setAttribute("data-target", "#projectCarousel", "data-slide-to", i)
+        if (i === 0) {
+            newIndicator.classList.add("active");
+        }
+        //then create carousel item, setting first one to have an "active" attribute
+        newCarouselItem = document.createElement("div");
+        (i === 0) ? newCarouselItem.classList.add("carousel-item","active") : newCarouselItem.classList.add("carousel-item");
+        // if (i === 0) {
+        //     newCarouselItem.classList.add("active");
+        // }
+        newCarouselItem.innerHTML = 
+            `
+            <img class="d-block w-100" src="${project.imgUrl}" alt="${project.title}">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>${project.title}</h5>
+                <a href="${project.imgUrl}">Check out the code!</a>
+            </div>
+
+            `;
+
+        //push both the new li and carousel item to the DOM
+        carouselIndicators.appendChild(newCarouselItem);
+        carouselDiv.appendChild(newCarouselItem);
+    }
+
+    projects.map((project, i) => {
+        console.log(i);
+        return fillCarousel(project,i)
+    })
 
 });
