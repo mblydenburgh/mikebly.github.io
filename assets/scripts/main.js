@@ -64,8 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const skillsHide = document.querySelector(`#skills-hide`);
     const hobbiesHide = document.querySelector(`#hobbies-hide`);
     const projectsDiv = document.querySelector(`#projects`);
-    const carouselIndicators = document.querySelector(`.carousel-indicators`);
-    const carouselDiv = document.querySelector(`.carousel-inner`);
+    const carouselDiv = document.querySelector(`#projects-carousel`);
     let hobbyText = document.querySelector(`#hobby-text`);
     let skillsText = document.querySelector(`#skills-span`);
 
@@ -103,46 +102,55 @@ document.addEventListener("DOMContentLoaded", function () {
             `
             <img src="${project.imgUrl}" alt="${project.title}">
             <p class="project-title">${project.title}</p>
-            <a href="">See the code!</>
+            <a href="${project.url}">See the code!</>
             `
             ;
         projectsDiv.appendChild(newProject);
     }
 
     function fillCarousel(project, i) {
-        let newIndicator;
         let newCarouselItem;
-        //for each project, make an li & push into the ol
-        //make the first one have an "active" attribute
-        newIndicator = document.createElement('li');
-        newIndicator.setAttribute("data-target", "#projectCarousel", "data-slide-to", i)
-        if (i === 0) {
-            newIndicator.classList.add("active");
-        }
-        //then create carousel item, setting first one to have an "active" attribute
-        newCarouselItem = document.createElement("div");
-        (i === 0) ? newCarouselItem.classList.add("carousel-item","active") : newCarouselItem.classList.add("carousel-item");
-        // if (i === 0) {
-        //     newCarouselItem.classList.add("active");
-        // }
+
+        newCarouselItem = document.createElement("a");
+        newCarouselItem.classList.add('carousel-item');
+        newCarouselItem.setAttribute("href",`#${project.url}`);
+
         newCarouselItem.innerHTML = 
-            `
-            <img class="d-block w-100" src="${project.imgUrl}" alt="${project.title}">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>${project.title}</h5>
-                <a href="${project.imgUrl}">Check out the code!</a>
-            </div>
+        `
+        <img src="${project.imgUrl}" alt="${project.title}">
+        <h6>${project.title}</h6>
+        `;
 
-            `;
-
-        //push both the new li and carousel item to the DOM
-        carouselIndicators.appendChild(newCarouselItem);
+        //push the carousel item to the carousel
         carouselDiv.appendChild(newCarouselItem);
     }
 
+    //create carousel and static images for all projects
     projects.map((project, i) => {
         fillCarousel(project,i);
         makeCard(project);
-    })
+    });
+
+    const modalSelect = document.querySelector('#modal1');
+    const modal = M.Modal.init(modalSelect);
+    document.querySelector(`.modal-trigger`).addEventListener("click",()=>{modal.open()})
+    // modal.open();
+    // const modalInstance = M.Modal.getInstance(modalSelect);
+
+    //initialize materialize carousel
+    const carouselElements = document.querySelector('.carousel');
+    const carouselOptions = {
+        indicators: true,
+        fullWidth: true,
+        noWrap: true
+    }
+    const carouselInit = M.Carousel.init(carouselElements,carouselOptions);
+    const carouselInstance = M.Carousel.getInstance(carouselElements);
+    setTimeout(autoPlay,5000);
+    function autoPlay(){
+        carouselInstance.next();
+        setTimeout(autoPlay,5000);
+    }
+
 
 });
