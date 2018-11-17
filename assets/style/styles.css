@@ -61,8 +61,13 @@
   color: white;
   min-height:100vh;
   display:grid;
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
 
+}
+
+.project-tile{
+  display:none;
 }
 
 #projectCarousel{
@@ -124,6 +129,14 @@ footer{
     padding: 100px auto;
   }
 
+  #project-tile{
+    display:none;
+  }
+
+  #project-carousel{
+    max-width: 85%;
+  }
+
   #contact{
     grid-template-columns: repeat(3,1fr);
   }
@@ -134,8 +147,23 @@ footer{
 
 @media (max-width:550px){
   #projects{
-    min-height: 50vh;
+    min-height: 100vh;
     padding: 100px auto;
+    justify-items: center;
+  }
+
+  .project-tile{
+    display: grid;
+    justify-items: center;
+  }
+
+  .project-tile img{
+    display: block;
+    width: 90%;
+  }
+
+  #projectCarousel{
+    display: none;
   }
  
   #contact{
