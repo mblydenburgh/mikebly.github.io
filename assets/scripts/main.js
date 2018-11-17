@@ -95,9 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function makeCard(project) {
-        let newProject = document.createElement('a');
-        newProject.classList.add('project-tile');
+        let newProject = document.createElement('div');
+        newProject.classList.add("project-tile");
         newProject.setAttribute("href", project.url);
+
         newProject.innerHTML =
             `
             <img src="${project.imgUrl}" alt="${project.title}">
@@ -140,8 +141,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     projects.map((project, i) => {
-        console.log(i);
-        return fillCarousel(project,i)
+        fillCarousel(project,i);
+        makeCard(project);
     })
 
 });
