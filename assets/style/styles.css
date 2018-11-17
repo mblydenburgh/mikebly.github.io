@@ -162,6 +162,12 @@ footer{
     justify-items: center;
   }
 
+  .modal-content{
+    max-width: 85%;
+    max-height: 85%;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .project-tile{
     display: grid;
     justify-items: center;
@@ -170,9 +176,11 @@ footer{
   .project-tile img{
     display: block;
     width: 90%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px rgba(30,30,30,.5);
   }
 
-  #projectCarousel{
+  #projects-carousel{
     display: none;
   }
  
