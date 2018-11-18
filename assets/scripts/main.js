@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `
             <img src="${project.imgUrl}" alt="${project.title}">
             <p class="project-title">${project.title}</p>
-            <a href="${project.url}">See the code!</>
+            <a class="btn waves-effect" href="${project.url}">Check it out!</>
             `
             ;
         projectsDiv.appendChild(newProject);

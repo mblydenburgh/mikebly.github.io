@@ -132,20 +132,38 @@ footer{
   color: #555;
 }
 
-@media (min-width:550px) and (max-width:739px){
+@media (min-width:550px) and (max-width:700px){
 
   #projects{
     min-height: 50vh;
     padding: 100px auto;
   }
 
-  #project-tile{
-    display:none;
+  .project-tile{
+    display: grid;
+    justify-items: center;
+    margin: 15px 0;
+  }
+
+  .project-tile img{
+    display: block;
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px rgba(30,30,30,.5);
+  }
+
+  #projects-carousel{
+    display: none;
+  }
+
+  /* #project-tile{
+    display:grid;
+    justify-items: center;
   }
 
   #project-carousel{
-    max-width: 85%;
-  }
+    display: none
+  } */
 
   #contact{
     grid-template-columns: repeat(3,1fr);
@@ -171,6 +189,7 @@ footer{
   .project-tile{
     display: grid;
     justify-items: center;
+    grid-gap: 10px
   }
 
   .project-tile img{
