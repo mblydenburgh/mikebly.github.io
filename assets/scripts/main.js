@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `
             <img src="${project.imgUrl}" alt="${project.title}">
             <p class="project-title">${project.title}</p>
-            <a class="btn waves-effect" href="${project.url}">Check it out!</>
+            <a class="btn waves-effect" href="${project.url}" target="_blank">Check it out!</>
             `
             ;
         projectsDiv.appendChild(newProject);
@@ -121,19 +121,23 @@ document.addEventListener("DOMContentLoaded", function () {
     function fillCarousel(project, i) {
         let newCarouselItem;
 
-        newCarouselItem = document.createElement("div");
+        newCarouselItem = document.createElement("a");
         newCarouselItem.classList.add('carousel-item');
-        newCarouselItem.setAttribute("style",`background: url("${project.imgUrl}") center`)
+        newCarouselItem.setAttribute("href",project.url)
+        // newCarouselItem.setAttribute("style",`background: url("${project.imgUrl}") center`)
 
         newCarouselItem.innerHTML = 
-        `
-        <div class="carousel-caption">
-            <h5 class="white-text">${project.title}</h5>
-            <a href="${project.codeUrl}" class="btn waves-effect" target="_blank">See the Code!</a>
-            <a href="${project.url}" class="btn waves-effect" target="_blank">Check it Out</a>
-        </div>
+            `
+            <img class="img-responsive" src="${project.imgUrl}"></img>
+            `
+        // `
+        // <div class="carousel-caption">
+        //     <h5 class="white-text">${project.title}</h5>
+        //     <a href="${project.codeUrl}" class="btn waves-effect" target="_blank">See the Code!</a>
+        //     <a href="${project.url}" class="btn waves-effect" target="_blank">Check it Out</a>
+        // </div>
     
-        `
+        // `
     
 
         //push the carousel item to the carousel
