@@ -95,6 +95,13 @@
   border-radius: 15px;
 }
 
+.carousel-caption{
+  background: rgba(50,50,50,.8);
+  margin-top: 245px;
+  padding: 10px 0;
+  position: relative;
+}
+
 #transition2{
   background: linear-gradient(180deg, #015249, #77c9d4);
 }
@@ -174,8 +181,6 @@ footer{
   }
 
   .modal-content{
-    /* max-width: 85%;
-    max-height: 85%; */
     -webkit-overflow-scrolling: touch;
   }
 
