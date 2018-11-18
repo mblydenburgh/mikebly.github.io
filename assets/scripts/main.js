@@ -2,46 +2,55 @@ let projects = [
     {
         title: "Munchies Metropolis",
         url: "https://pgould94.github.io/Munchies_Metropolis",
+        codeUrl:"https://github.com/pgould94/Munchies_Metropolis",
         imgUrl: "./assets/images/munchie.jpg"
     },
     {
         title: "Pupperbase (Angular JS)",
         url: "https://mikebly.github.io/pupperbase",
+        codeUrl:"https://github.com/mikebly/pupperbase",
         imgUrl: "./assets/images/pupper.jpg"
     },
     {
         title: "Rock Paper Scissors (Cross Browser w/ Firebase)",
         url: "https://mikebly.github.io/RPS-MP",
+        codeURL:"https://mikebly.github.io/RPS-MP",
         imgUrl: "./assets/images/rps.jpg"
     },
     {
         title: "Trivia",
         url: "https://mikebly.github.io/trivia",
+        codeUrl:"https://github.io/mikebly/trivia",
         imgUrl: "./assets/images/trivia.jpg"
     },
     {
         title: "Giphy Goodness",
         url: "https://mikebly.github.io/giphy-goodness",
+        codeUrl:"http://github.com/mikebly/giphy-goodness",
         imgUrl: "./assets/images/giphy.jpg"
     },
     {
         title: "TSA Luggage Analysis (Angular JS)",
         url: "https://mikebly.github.io/tsa-luggage-analysis",
+        codeUrl:"https://github.com/mikebly/tsa-luggage-analysis",
         imgUrl: "./assets/images/claims.jpg"
     },
     {
         title: "Star Wars Battle",
         url: "https://mikebly.github.io/unit-4-game",
+        codeUrl:"https://github.io/mikebly/unit-4-game",
         imgUrl: "./assets/images/starwars.jpg"
     },
     {
         title: "Color Game",
         url: "https://mikebly.github.io/Color-Game",
+        codeUrl:"https://github.com/mikebly/Color-Game",
         imgUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1780363/colorgame.jpg"
     },
     {
         title: "To Do",
         url: "https://mikebly.github.io/to-do",
+        codeUrl:"https://github.com/mikebly/to-do",
         imgUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1780363/todo.jpg"
     },
     {
@@ -52,6 +61,7 @@ let projects = [
     {
         title: "Weather App",
         url: "https://codepen.io/mikebly/live/Gdabzo",
+        codeUrl:"https://github.com/mikebly/min-weather",
         imgUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1780363/minweather.jpg"
     },
 ];
@@ -111,15 +121,20 @@ document.addEventListener("DOMContentLoaded", function () {
     function fillCarousel(project, i) {
         let newCarouselItem;
 
-        newCarouselItem = document.createElement("a");
+        newCarouselItem = document.createElement("div");
         newCarouselItem.classList.add('carousel-item');
-        newCarouselItem.setAttribute("href",`#${project.url}`);
+        newCarouselItem.setAttribute("style",`background: url("${project.imgUrl}") center`)
 
         newCarouselItem.innerHTML = 
         `
-        <img src="${project.imgUrl}" alt="${project.title}">
-        <h6>${project.title}</h6>
-        `;
+        <div class="carousel-caption">
+            <h5 class="white-text">${project.title}</h5>
+            <a href="${project.codeUrl}" class="btn waves-effect" target="_blank">See the Code!</a>
+            <a href="${project.url}" class="btn waves-effect" target="_blank">Check it Out</a>
+        </div>
+    
+        `
+    
 
         //push the carousel item to the carousel
         carouselDiv.appendChild(newCarouselItem);
@@ -141,8 +156,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const carouselElements = document.querySelector('.carousel');
     const carouselOptions = {
         indicators: true,
-        fullWidth: true,
-        noWrap: true
+        noWrap: true,
+        dist: -50
     }
     const carouselInit = M.Carousel.init(carouselElements,carouselOptions);
     const carouselInstance = M.Carousel.getInstance(carouselElements);
