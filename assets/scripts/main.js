@@ -6,6 +6,12 @@ let projects = [
         imgUrl: "./assets/images/munchie.jpg"
     },
     {
+        title: "Diablo Class Finder",
+        url: "https://mb-diablo-finder.herokuapp.com",
+        codeUrl:"https://github.com/mikebly/diablo-class-finder",
+        imgUrl: "./assets/images/diablo.jpg"
+    },
+    {
         title: "Pupperbase (Angular JS)",
         url: "https://mikebly.github.io/pupperbase",
         codeUrl:"https://github.com/mikebly/pupperbase",
