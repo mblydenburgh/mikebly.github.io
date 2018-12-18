@@ -1,12 +1,12 @@
 let projects = [
     {
-        title: "Munchies Metropolis",
+        title: "Munchies Metropolis (CSS Grid, Firebase, jQuery)",
         url: "https://pgould94.github.io/Munchies_Metropolis",
         codeUrl:"https://github.com/pgould94/Munchies_Metropolis",
         imgUrl: "./assets/images/munchie.jpg"
     },
     {
-        title: "Diablo Class Finder",
+        title: "Diablo Class Finder (Express/NodeJS)",
         url: "https://mb-diablo-finder.herokuapp.com",
         codeUrl:"https://github.com/mikebly/diablo-class-finder",
         imgUrl: "./assets/images/diablo.jpg"
@@ -18,7 +18,7 @@ let projects = [
         imgUrl: "./assets/images/pupper.jpg"
     },
     {
-        title: "Rock Paper Scissors (Cross Browser w/ Firebase)",
+        title: "Rock Paper Scissors (Multiplayer w/ Firebase)",
         url: "https://mikebly.github.io/RPS-MP",
         codeURL:"https://mikebly.github.io/RPS-MP",
         imgUrl: "./assets/images/rps.jpg"
@@ -72,7 +72,7 @@ let projects = [
     },
 ];
 
-console.log(projects.length);
+console.log(`loading ${projects.length} projects`);
 
 document.addEventListener("DOMContentLoaded", function () {
     const skillsShow = document.querySelector(`#skills-show`);
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `
             <img src="${project.imgUrl}" alt="${project.title}">
             <p class="project-title">${project.title}</p>
-            <a class="btn waves-effect" href="${project.url}" target="_blank">Check it out!</>
+            <a class="btn waves-effect" href="${project.url}" target="_blank">Check it out!</a>
             `
             ;
         projectsDiv.appendChild(newProject);
@@ -129,21 +129,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         newCarouselItem = document.createElement("a");
         newCarouselItem.classList.add('carousel-item');
-        newCarouselItem.setAttribute("href",project.url)
-        // newCarouselItem.setAttribute("style",`background: url("${project.imgUrl}") center`)
+        // newCarouselItem.setAttribute("href",project.url);
+        newCarouselItem.setAttribute("style",`background: url("${project.imgUrl}") center center`);
 
         newCarouselItem.innerHTML = 
+            // `
+            // <img class="img-responsive" src="${project.imgUrl}"></img>
             `
-            <img class="img-responsive" src="${project.imgUrl}"></img>
-            `
-        // `
-        // <div class="carousel-caption">
-        //     <h5 class="white-text">${project.title}</h5>
-        //     <a href="${project.codeUrl}" class="btn waves-effect" target="_blank">See the Code!</a>
-        //     <a href="${project.url}" class="btn waves-effect" target="_blank">Check it Out</a>
-        // </div>
+            <div class="carousel-caption">
+                <h5 class="white-text">${project.title}</h5>
+                <a href="${project.codeUrl}" class="btn waves-effect" target="_blank">See the Code!</a>
+                <a href="${project.url}" class="btn waves-effect" target="_blank">Check it Out</a>
+            </div>
     
-        // `
+        `
     
 
         //push the carousel item to the carousel
@@ -158,9 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const modalSelect = document.querySelector('#modal1');
     const modal = M.Modal.init(modalSelect);
-    document.querySelector(`.modal-trigger`).addEventListener("click",()=>{modal.open()})
-    // modal.open();
-    // const modalInstance = M.Modal.getInstance(modalSelect);
 
     //initialize materialize carousel
     const carouselElements = document.querySelector('.carousel');

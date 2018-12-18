@@ -90,6 +90,7 @@
 
 #projects-carousel{
   max-width: 75%;
+  height: 700px;
   justify-self: center;
   align-self: center;
   border-radius: 15px;
@@ -97,7 +98,7 @@
 
 .carousel-caption{
   background: rgba(50,50,50,.8);
-  margin-top: 245px;
+  margin-top: 500px;
   padding: 10px 0;
   position: relative;
 }
