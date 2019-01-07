@@ -6,22 +6,22 @@ let projects = [
         imgUrl: "./assets/images/munchie.jpg"
     },
     {
-        title: "Diablo Class Finder (Express/NodeJS)",
-        url: "https://mb-diablo-finder.herokuapp.com",
-        codeUrl:"https://github.com/mikebly/diablo-class-finder",
-        imgUrl: "./assets/images/diablo.jpg"
-    },
-    {
         title: "Pupperbase (Angular JS)",
         url: "https://mikebly.github.io/pupperbase",
         codeUrl:"https://github.com/mikebly/pupperbase",
         imgUrl: "./assets/images/pupper.jpg"
     },
     {
-        title: "Rock Paper Scissors (Multiplayer w/ Firebase)",
-        url: "https://mikebly.github.io/RPS-MP",
-        codeURL:"https://mikebly.github.io/RPS-MP",
-        imgUrl: "./assets/images/rps.jpg"
+        title: "Brgr Bar (Handlebars/Express/MySQL)",
+        url: "https://mb-brgr-bar.herokuapp.com",
+        codeURL:"https://mikebly.github.io/burger",
+        imgUrl: "./assets/images/burger.jpg"
+    },
+    {
+        title: "Diablo Class Finder (Express/NodeJS)",
+        url: "https://mb-diablo-finder.herokuapp.com",
+        codeUrl:"https://github.com/mikebly/diablo-class-finder",
+        imgUrl: "./assets/images/diablo.jpg"
     },
     {
         title: "Trivia",

@@ -65,6 +65,10 @@
   height:1100px;
 }
 
+#skills-span{
+  max-width: 75%;
+}
+
 .transition{
   height:30vh;
 }
@@ -121,7 +125,7 @@
 }
 
 .contact-link{
-  color: inherit;
+  color: #555;
 }
 
 .contact-link:hover{
