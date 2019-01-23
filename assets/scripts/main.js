@@ -1,5 +1,11 @@
 let projects = [
     {
+        title: "Cornucopia (Express/Handlebars/MySQL/Passport)",
+        url: "https://cornucopia-todo-team-name.herokuapp.com/",
+        codeUrl:"https://github.com/plipandfirt/Team4Project2",
+        imgUrl: "./assets/images/cornucopia.jpg"
+    },
+    {
         title: "Munchies Metropolis (CSS Grid, Firebase, jQuery)",
         url: "https://pgould94.github.io/Munchies_Metropolis",
         codeUrl:"https://github.com/pgould94/Munchies_Metropolis",
@@ -52,23 +58,6 @@ let projects = [
         url: "https://mikebly.github.io/Color-Game",
         codeUrl:"https://github.com/mikebly/Color-Game",
         imgUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1780363/colorgame.jpg"
-    },
-    {
-        title: "To Do",
-        url: "https://mikebly.github.io/to-do",
-        codeUrl:"https://github.com/mikebly/to-do",
-        imgUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1780363/todo.jpg"
-    },
-    {
-        title: "Quote Machine",
-        url: "https://codepen.io/mikebly/live/pVMobb",
-        imgUrl: "https://s3-us-west-2.amazonaws.com/i.cdpn.io/1780363.pVMobb.19b810bf-0672-48df-8e9d-6bc95b8df4ac.png"
-    },
-    {
-        title: "Weather App",
-        url: "https://codepen.io/mikebly/live/Gdabzo",
-        codeUrl:"https://github.com/mikebly/min-weather",
-        imgUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1780363/minweather.jpg"
     },
 ];
 
