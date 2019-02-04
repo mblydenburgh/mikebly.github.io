@@ -5,4 +5,4 @@ Having heavily used jQuery in learning javascript, I wanted to stick with vanill
 
 On full screen, a Materialize Carousel is used to display images, while on smaller screens a static list of images appears.
 
-Currently in development...[React Portfolio!](https://github.com/mikebly/portfolio-react) 
+You should also see:[React Portfolio!](https://github.com/mikebly/portfolio-react) 
