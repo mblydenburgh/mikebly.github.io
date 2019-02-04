@@ -12,6 +12,12 @@ let projects = [
         imgUrl: "./assets/images/munchie.jpg"
     },
     {
+        title: "Beer Scraper (Mongoose/Cheerios/Handlebars)",
+        url: "https://mb-scraper.herokuapp.com/",
+        codeUrl:"https://github.com/mikebly/scraper",
+        imgUrl: "./assets/images/scraper.jpg"
+    },
+    {
         title: "Pupperbase (Angular JS)",
         url: "https://mikebly.github.io/pupperbase",
         codeUrl:"https://github.com/mikebly/pupperbase",
